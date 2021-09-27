@@ -27,6 +27,7 @@ df_london["timestamp"] = pandas.to_datetime(df_london["timestamp"])
 df_london["year"] = df_london["timestamp"].dt.year
 df_london["month"] = df_london["timestamp"].dt.month
 df_london["day"] = df_london["timestamp"].dt.day
+df_london["hour"] = df_london["timestamp"].dt.hour
 
-df_london_pivot = pandas.pivot_table(df_london, index=["month","day"], columns="year", values="weather_code", aggfunc=numpy.average)
+df_london_pivot = pandas.pivot_table(df_london, index=["month","day","hour"], columns="year", values="weather_code")
 print(df_london_pivot)
