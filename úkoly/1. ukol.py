@@ -15,7 +15,7 @@ df_titanic_grouped = df_titanic_grouped.reset_index()
 #print(df_titanic_grouped.head())
 
 df_titanic_pivot_abs = pandas.pivot_table(df_titanic_grouped, index="Sex", columns="Pclass", values="Survived", aggfunc=numpy.sum, margins=True)
-df_titanic_pivot_relativni = pandas.pivot_table(df_titanic_grouped, index="Sex", columns="Pclass", values="Survived", aggfunc=numpy.mean, margins=True)
+df_titanic_pivot_relativni = pandas.pivot_table(df_titanic, index="Sex", columns="Pclass", values="Survived", aggfunc=numpy.mean, margins=True)
 
 print(df_titanic_pivot_abs)
 print(df_titanic_pivot_relativni)
